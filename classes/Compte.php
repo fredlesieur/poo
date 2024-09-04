@@ -15,13 +15,13 @@ abstract class Compte
      * @var float
      * 
      */
-    private float $solde;
+    protected float $solde;
     /**
      * construictaire du compte bancaire
      * @param string $nom Nom du titualaire
      * @param float $montant Montant du solde a l'ouverture
      */
-    public function __construct(string $nom,float $montant = 100, ){
+    public function __construct(string $nom,float $montant = 100){
         //on attribue le nom à la propriété titulaire de l'instance créee
         $this->titulaire = $nom;
         $this->solde = $montant;

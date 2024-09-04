@@ -34,9 +34,11 @@ public function setDecouvert(int $montant):self
 }
 public function retirer(float $montant)
 {
-    // on verifie si le decouvert pertmet le retrait
+    // on verifie si le decouvert permet le retrait
     if($montant>0 && $this->solde - $montant >= -$this->decouvert){
 $this->solde-=$montant;
+    }else{
+        echo "Le découvert est insuffisant";
     }
 }
 }
