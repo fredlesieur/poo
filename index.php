@@ -8,3 +8,8 @@ $compte1 = new CompteCourant("fred", 500, 200);
 $compte1->setDecouvert(200);
 var_dump($compte1);
 
+/**
+ * test commentaire XAVIER 
+ * sur nouvelle branche GIT de FRED
+ * 
+ */
