@@ -4,15 +4,11 @@ require_once 'classes/CompteCourant.php';
 require_once 'classes/CompteEpargne.php';
 
 // on instancie le compte
-$compte1 = new CompteCourant("fred", 100);
+$compte1 = new CompteCourant("fred", 500, 200);
 var_dump($compte1);
 
-/**
- * test commentaire XAVIER 
- * sur nouvelle branche GIT de FRED
- * 
- */
+$compteEpargne = new CompteEpargne("fred", 200, 5);
+var_dump($compteEpargne);
 
-/**
- * commentaire n 2
- */
+$compteEpargne->verserInterets();
+var_dump($compteEpargne);
