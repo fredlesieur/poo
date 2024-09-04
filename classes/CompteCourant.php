@@ -34,6 +34,7 @@ public function setDecouvert(int $montant):self
 }
 public function retirer(float $montant)
 {
+
     // on verifie si le decouvert pertmet le retrait
     if($montant > 0 && $this->solde - $montant >= -$this->decouvert){
 $this->solde -= $montant;
