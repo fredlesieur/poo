@@ -11,6 +11,13 @@ class CompteEpargne extends Compte
      */
    private $taux_interets;
 
+   public function __construct(string $nom,float $montant, int $taux)
+   {
+    // on transfere les informations nécessaires au constructeurs parent
+    parent:: __construct($nom, $montant);
+    $this->taux_interets = $taux;
+   }
+
    
 
    /**
@@ -18,7 +25,7 @@ class CompteEpargne extends Compte
     *
     * @return  int
     */ 
-   public function getTaux_interets()
+   public function getTauxInterets(): int
    {
       return $this->taux_interets;
    }
@@ -30,10 +37,15 @@ class CompteEpargne extends Compte
     *
     * @return  self
     */ 
-   public function setTaux_interets(int $taux_interets)
+   public function setTauxInterets(int $taux_interets): self
    {
+    if ($taux_interets >=0){
       $this->taux_interets = $taux_interets;
-
+    }
       return $this;
+   }
+   public function verserInterets() 
+   {
+    $this->solde = $this->solde + ($this->solde * $this->taux_interets / 100);
    }
 }
